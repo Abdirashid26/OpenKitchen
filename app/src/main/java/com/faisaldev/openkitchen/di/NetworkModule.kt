@@ -1,6 +1,7 @@
 package com.faisaldev.openkitchen.di
 
 import com.faisaldev.openkitchen.network.ApiService
+import com.faisaldev.pg3dssdk.Pg3DSPaymentSDK
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -42,5 +43,14 @@ object NetworkModule {
     @Singleton
     fun provideApiService(retrofit: Retrofit): ApiService {
         return retrofit.create(ApiService::class.java)
+    }
+
+
+    @Provides
+    @Singleton
+    fun providesPg3DSPaymentSDK() : Pg3DSPaymentSDK{
+        val pg3DSPaymentSDK  : Pg3DSPaymentSDK =  Pg3DSPaymentSDK.getInstance()
+        pg3DSPaymentSDK.init("https://test-eclecticsgateway.ekenya.co.ke:8095")
+        return pg3DSPaymentSDK;
     }
 }

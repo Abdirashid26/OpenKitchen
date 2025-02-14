@@ -15,7 +15,7 @@ class OnboardingFragment : Fragment() {
         super.onCreate(savedInstanceState)
     }
 
-    private val viewModel: OnboardingFragment by viewModels()
+//    private val viewModel: OnboardingFragment by viewModels()
 
 
     override fun onCreateView(
