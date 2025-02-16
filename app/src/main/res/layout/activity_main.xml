@@ -17,4 +17,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/payBtn"
+        android:layout_marginTop="20dp"
+        android:id="@+id/message"
+        android:text="Status : "
+        android:textAllCaps="true"
+        android:textAlignment="center"
+        />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

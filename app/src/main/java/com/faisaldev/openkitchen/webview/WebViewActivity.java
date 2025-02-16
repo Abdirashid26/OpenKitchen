@@ -1,7 +1,10 @@
 package com.faisaldev.openkitchen.webview;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebSettings;
@@ -14,6 +17,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.Observer;
 
 import com.faisaldev.openkitchen.R;
+import com.faisaldev.openkitchen.utils.Global;
 import com.faisaldev.pg3dssdk.Pg3DSPaymentSDK;
 
 import org.json.JSONException;
@@ -40,21 +44,31 @@ public class WebViewActivity extends AppCompatActivity {
         WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);
         webSettings.setDomStorageEnabled(true);
+        webSettings.setMixedContentMode(WebSettings.MIXED_CONTENT_ALWAYS_ALLOW); // Allow mixed content
 
         webView.setWebViewClient(new WebViewClient() {
             @Override
             public boolean shouldOverrideUrlLoading(WebView view, WebResourceRequest request) {
                 return false;
             }
+
+            @Override
+            public void onPageFinished(WebView view, String url) {
+                super.onPageFinished(view, url);
+                System.out.println("WebView Page Loaded: " + url); // Debugging logs
+            }
         });
 
         webView.setWebChromeClient(new WebChromeClient());
 
-        // Get the URL from intent
-        String url = getIntent().getStringExtra("URL");
-        if (url != null) {
-            webView.loadUrl(url);
+        String webviewform = getIntent().getStringExtra("webviewform");
+        if (webviewform != null) {
+            webView.loadDataWithBaseURL(null, webviewform, "text/html", "UTF-8", null);
         }
+
+
+
+
 
 
         pg3DSPaymentSDK.getResultLiveData().observe(this, new Observer<String>() {
@@ -75,6 +89,18 @@ public class WebViewActivity extends AppCompatActivity {
                             Toast.makeText(WebViewActivity.this, statusDescription, Toast.LENGTH_LONG).show()
                     );
 
+                    // Pass data back to MainActivity
+                    Intent resultIntent = new Intent();
+                    resultIntent.putExtra("transactionId", transactionId);
+                    resultIntent.putExtra("status", status);
+                    resultIntent.putExtra("message", statusDescription);
+                    setResult(RESULT_OK, resultIntent);
+
+                    pg3DSPaymentSDK.closeSocketConnection();
+                    // Finish WebViewActivity and return to MainActivity
+
+
+                    finish();
                 } catch (JSONException e) {
                     e.printStackTrace();
                     System.out.println("❌ Invalid JSON format!");
@@ -84,6 +110,21 @@ public class WebViewActivity extends AppCompatActivity {
 
 
     }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        finish(); // Closes the activity
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        System.out.println("🔥 Activity is closing!");
+        pg3DSPaymentSDK.closeSocketConnection();
+    }
+
+
 
 
 

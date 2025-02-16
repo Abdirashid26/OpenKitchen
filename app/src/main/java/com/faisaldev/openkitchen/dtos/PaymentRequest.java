@@ -3,20 +3,24 @@ package com.faisaldev.openkitchen.dtos;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.UUID;
+
 public class PaymentRequest {
     private String msisdn = "254708633994";
     private String amount = "10";
     private String currencycode = "KES";
-    private String timestamp = "2019-06-25 12:28:42.000";
+    private String timestamp = "2025-06-25 12:28:42.000";
     private String accountno = "254711959143";
-    private String username = "user@ekenya.co.ke";
-    private String password = "e177c5bc4be6fd29add7ba7f5056609e1cecd408f7166c0705f744f7f64a2806cd3c9a448fa6c4e2bb810b41fdd945d9fb";
-    private String clientid = "1030";
-    private String serviceid = "6125";
-    private String resulturl = "https://domain.com";
+    private String username = "janty";
+    private String password = "b0c95e2144bdd4c86b94501a814f9bbd9d025651d8497df04b7b7f318fe5172088c491906756a67727f6ea964e9caf1c034bf9bb267b821e6b43cb3dcc569d0f";
+    private String clientid = "5094";
+    private String serviceid = "6164";
+//    private String resulturl = "https://test-api.ekenya.co.ke/pg3ds/api/v1/cards3dsResult/receive";
+    private String resulturl = "https://test-portal.ekenya.co.ke/mobile-banking/pg3DS-portal";
     private String narration = "Three Dimension";
-    private String transactionid = "ECL_2.0_CARD_VER_001";
-    private String payload = "M4pOMv19fnK0Gw76mbB/3v+o9F8XW2Zg==";
+    private String transactionid = UUID.randomUUID().toString();
+    private String payload = "kfHraexF4Hn7jkM3gZpKeEa5n9eUkCv33W9VnNQamT40ROrOW4SLO1fR20o9yDFOEGM+cwEW1cXPNaGXQ1sLO8TlHBx/XhoAEgz+Grl9PEONJ1k+2mVXVb4p1gY27nlgJvfdn5sF8FJO758iYZsRAGsxJ4gTv79TFpmBW6RvMvBuX/zAW4RKYlELkELxVJq9Y5DD7o0RAWbw1vqnqB55o68ZLi0AiemUrvEs/aHqzqFKMbFANW2gfmxcvG8AHsCqTSC9WWRndIsM6v3urIuOyqR9hSHevt8zb9PtsYVy001sExli3gLAEsJvUQcOhxwfP1Ki+8JODa6NYzVROJpW3g==";
+
 
     // Default Constructor
     public PaymentRequest() {}
