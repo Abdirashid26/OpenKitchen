@@ -15,9 +15,10 @@ public class PaymentRequest {
     private String password = "b0c95e2144bdd4c86b94501a814f9bbd9d025651d8497df04b7b7f318fe5172088c491906756a67727f6ea964e9caf1c034bf9bb267b821e6b43cb3dcc569d0f";
     private String clientid = "5094";
     private String serviceid = "6164";
-//    private String resulturl = "https://test-api.ekenya.co.ke/pg3ds/api/v1/cards3dsResult/receive";
-    private String resulturl = "https://test-portal.ekenya.co.ke/mobile-banking/pg3DS-portal";
+    private String resulturl = "https://test-api.ekenya.co.ke/pg3ds/api/v1/cards3dsResult/receive";
+//    private String resulturl = "https://test-portal.ekenya.co.ke/mobile-banking/pg3DS-portal";
     private String narration = "Three Dimension";
+//    private String transactionid = "ECL_2.0_CARD_VER_001";
     private String transactionid = UUID.randomUUID().toString();
     private String payload = "kfHraexF4Hn7jkM3gZpKeEa5n9eUkCv33W9VnNQamT40ROrOW4SLO1fR20o9yDFOEGM+cwEW1cXPNaGXQ1sLO8TlHBx/XhoAEgz+Grl9PEONJ1k+2mVXVb4p1gY27nlgJvfdn5sF8FJO758iYZsRAGsxJ4gTv79TFpmBW6RvMvBuX/zAW4RKYlELkELxVJq9Y5DD7o0RAWbw1vqnqB55o68ZLi0AiemUrvEs/aHqzqFKMbFANW2gfmxcvG8AHsCqTSC9WWRndIsM6v3urIuOyqR9hSHevt8zb9PtsYVy001sExli3gLAEsJvUQcOhxwfP1Ki+8JODa6NYzVROJpW3g==";
 

@@ -46,7 +46,8 @@ class MainActivity : AppCompatActivity() {
         payButton.setOnClickListener {
             val credentials = "admin:password";
             val basicAuth = "Basic " + Base64.encodeToString(credentials.toByteArray(), Base64.NO_WRAP);
-            pg3DSPaymentSDK.pay(paymentRequest.toJson()).observe(this){redirectUrl ->
+                pg3DSPaymentSDK.pay(paymentRequest.toJson()).observe(this){redirectUrl ->
+                    println("RESPONSE:."+redirectUrl)
                 // open the webView
                 pg3DSPaymentSDK.startWebSocket("ws://10.20.2.91:30681/ws/card3ds?uniqueId=" + paymentRequest.transactionid, paymentRequest.transactionid,basicAuth);
 
