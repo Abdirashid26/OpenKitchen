@@ -6,11 +6,11 @@ import org.json.JSONObject;
 import java.util.UUID;
 
 public class PaymentRequest {
-    private String msisdn = "254708633994";
-    private String amount = "10";
+    private String msisdn = "254795881812";
+    private String amount = "20";
     private String currencycode = "KES";
     private String timestamp = "2025-06-25 12:28:42.000";
-    private String accountno = "254711959143";
+    private String accountno = "254795881812";
     private String username = "janty";
     private String password = "b0c95e2144bdd4c86b94501a814f9bbd9d025651d8497df04b7b7f318fe5172088c491906756a67727f6ea964e9caf1c034bf9bb267b821e6b43cb3dcc569d0f";
     private String clientid = "5094";
@@ -20,7 +20,7 @@ public class PaymentRequest {
     private String narration = "Three Dimension";
 //    private String transactionid = "ECL_2.0_CARD_VER_001";
     private String transactionid = UUID.randomUUID().toString();
-    private String payload = "kfHraexF4Hn7jkM3gZpKeEa5n9eUkCv33W9VnNQamT40ROrOW4SLO1fR20o9yDFOEGM+cwEW1cXPNaGXQ1sLO8TlHBx/XhoAEgz+Grl9PEONJ1k+2mVXVb4p1gY27nlgJvfdn5sF8FJO758iYZsRAGsxJ4gTv79TFpmBW6RvMvBuX/zAW4RKYlELkELxVJq9Y5DD7o0RAWbw1vqnqB55o68ZLi0AiemUrvEs/aHqzqFKMbFANW2gfmxcvG8AHsCqTSC9WWRndIsM6v3urIuOyqR9hSHevt8zb9PtsYVy001sExli3gLAEsJvUQcOhxwfP1Ki+8JODa6NYzVROJpW3g==";
+    private String payload = "K7br9iMqOz7/xb5d2KKSf1fKcC41BeNFOqhMeyVbkYGMgNhJpa1hzRou0hqLTZ6OixzVSxDUEnBYGCDUZ/JVfO/KbB4YHs+FX+uJkBZX6n1sPeRAfCqqHwSyVNiHw8OYxqnyWConssrsgNLDYcuxiBCBzi5UNRlmIIzRcQeej55cnfK2puLu4jWNdCBgOcgU5VP4g+WH55trBKYHBplERjzjnP/K4OrA0LpjApy/Z3EizktpmrhEfcnzylmVfW2TMmxFMQMr+YuF9zPpbKBCUOHTOdrMPT78+d/ADcf2Tg+FQJ/EztXvC8ljyn8KOOnjZgZBJxizQZDWcw/Rw3Jb+A==";
 
 
     // Default Constructor
